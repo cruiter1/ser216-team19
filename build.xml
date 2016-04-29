@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project name="Four Row Solitare Spring 16 Online Team 19">
+   
+   <property name="src.dir" value="src"/>
+   <property name="dist.dir" value="bin"/>
+   <property name="classes.dir" value="classes"/>
+   <property name="docs.dir" value="doc"/>
+   <property name="obj.dir" value="obj"/>
+
+   <target name="targets">
+      <echo message="Targets are clean, prepare, build.cpp, build.java, build.all, execute.java, generate.server.stub, build.cpp.server, generate.client.stub, build.cpp.client, targets"/>
+      <echo message="base directory is: ${basedir}"/>
+   </target>
+
+   <path id="compile.classpath">
+      <pathelement location="${classes.dir}"/>
+        <!--fileset dir="lib">
+            <include name="*.jar"/>
+            <include name="*.zip"/>
+        </fileset-->
+   </path>
+
+   <target name="clean">
+      <delete dir="${classes.dir}" failonerror="false"/>
+      <delete dir="${obj.dir}" failonerror="false"/>
+      <delete dir="${dist.dir}" failonerror="false"/>
+   </target>
+
+   <target name="prepare" depends="clean">
+      <mkdir dir="${classes.dir}"/>
+      <mkdir dir="${dist.dir}" />
+      <mkdir dir="${obj.dir}" />
+   <copy todir="${classes.dir}/FourRowSolitaire/images">
+    	<fileset dir="images"/>
+      </copy>
+      <copy todir="${classes.dir}/FourRowSolitaire/sounds">
+      	<fileset dir="sounds"/>
+  	  </copy>
+  	  </target>
+
+  <target name="build" depends="prepare"
+          description="Compile Java sample client sources">
+     <!-- Compile Java classes as necessary -->
+     <javac srcdir="${src.dir}/FourRowSolitaire"
+            destdir="${classes.dir}"
+            includeantruntime="false">
+        <classpath refid="compile.classpath"/>
+    </javac>
+  </target>
+  
+   <target name="package" depends="build"
+          description="Compile Java sample client sources">
+          <jar jarfile="${dist.dir}/FourRowSolitaire.jar">
+            <fileset dir="${classes.dir}" includes="*/**"/>
+            <manifest>
+                <attribute name="Main-Class" value="FourRowSolitaire.FourRowSolitaire"/>
+                <!--<attribute name="Class-Path" value="${runtime.classpath}"/>-->
+                <attribute name="Implementation-Title" value="Online-Team-19-Four-Row-Solitaire"/>
+                <attribute name="Implementation-Version" value="1"/>
+                <attribute name="Implementation-Vendor" value="Online Team 19"/>
+            </manifest>
+        </jar>
+          </target>
+
+   <target name="execute" depends="package"
+           description="Start program">
+         <echo message="command line execute: java -cp classes:lib/mediaGui.jar ser321.media.SampleMediaClient" />
+         <java classname="ser321.media.SampleMediaClient" fork="yes">
+           <classpath refid="compile.classpath"/>
+         </java>
+   </target>
+
+
+ </project>
