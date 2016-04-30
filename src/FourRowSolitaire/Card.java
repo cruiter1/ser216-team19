@@ -23,6 +23,7 @@ import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
 import java.net.URL;
+
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
@@ -33,7 +34,7 @@ import javax.swing.JComponent;
  *
  * @author Matt Stephen
  */
-public class Card extends JComponent
+public class Card extends JComponent implements Cloneable
 {
     public static final String SPADES_SUIT = "Spades";
     public static final String CLUBS_SUIT = "Clubs";
