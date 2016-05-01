@@ -249,6 +249,7 @@ public class FourRowSolitaire extends SolitaireBoard implements ActionListener
                     System.err.println("Problem Loading Saved Game (More or Less Than 52 Cards Stored)... Starting New Game");
                     super.createBoard(null);
                 }
+                input.close();
             }
             catch(Exception ex)
             {
