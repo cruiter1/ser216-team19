@@ -30,7 +30,12 @@ import java.awt.Point;
  */
 public class SingleCell extends CardStack
 {
-    public SingleCell() {}
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public SingleCell() {}
 
     public Card push(Card card)
     {

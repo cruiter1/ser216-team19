@@ -28,7 +28,12 @@ package FourRowSolitaire;
  */
 public class Column extends CardStack
 {
-    public Column() {}
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Column() {}
 
     public Card push(Card card)
     {

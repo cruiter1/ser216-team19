@@ -34,11 +34,16 @@ import javax.swing.JOptionPane;
  */
 public class DealDeck extends CardStack
 {
-    private DiscardPile discardPile;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private DiscardPile discardPile;
     private int numTimesThroughDeck = 1;
 
     private int drawCount = 1;
-    private int difficulty = 2; //1, 2, or 3
+    @SuppressWarnings("unused")
+	private int difficulty = 2; //1, 2, or 3
 
     private static final int DRAW_ONE_THROUGH_LIMIT = 2;
     private static final int DRAW_THREE_THROUGH_LIMIT = 3;

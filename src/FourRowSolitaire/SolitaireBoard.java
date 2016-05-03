@@ -35,7 +35,11 @@ import javax.swing.event.MouseInputAdapter;
  */
 public class SolitaireBoard extends JFrame
 {
-    public static final int GAME_WON = 0;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static final int GAME_WON = 0;
     public static final int GAME_LOST = 1;
     public static final int RESET_STATS = 2;
     public static final int DO_NOTHING = 3;

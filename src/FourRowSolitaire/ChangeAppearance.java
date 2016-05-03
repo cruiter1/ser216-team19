@@ -32,7 +32,11 @@ import javax.swing.*;
  */
 public class ChangeAppearance extends JDialog implements ActionListener
 {
-    public static final int NUM_DECKS = 3;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static final int NUM_DECKS = 3;
     public static final int NUM_BACKGROUNDS = 3;
 
     public static final int FRS_DECK = 3;

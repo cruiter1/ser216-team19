@@ -36,7 +36,11 @@ import javax.swing.JComponent;
  */
 public class Card extends JComponent implements Cloneable
 {
-    public static final String SPADES_SUIT = "Spades";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static final String SPADES_SUIT = "Spades";
     public static final String CLUBS_SUIT = "Clubs";
     public static final String HEARTS_SUIT = "Hearts";
     public static final String DIAMONDS_SUIT = "Diamonds";

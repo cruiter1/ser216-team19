@@ -23,7 +23,6 @@ import java.awt.Desktop;
 import java.awt.event.*;
 import java.io.*;
 import java.net.URI;
-import java.net.URL;
 import java.util.LinkedList;
 import javax.swing.*;
 
@@ -36,7 +35,12 @@ import javax.swing.*;
  */
 public class FourRowSolitaire extends SolitaireBoard implements ActionListener
 {
-    public static final String version = ".40";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static final String version = ".40";
     
     private JMenuBar menuBar = new JMenuBar();
 
@@ -110,26 +114,6 @@ public class FourRowSolitaire extends SolitaireBoard implements ActionListener
         about.setMnemonic('a');
 
         loadData();
-    }
-
-    private void checkForUpdate()
-    {
-        try
-        {
-            URL url = new URL("http://www.utdallas.edu/~mas073100/FourRowSolitaire/version.txt");
-            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-
-            String inputLine = in.readLine();
-            in.close();
-
-            //Sometimes reads an html document if disconnected from internet
-            if(!inputLine.contains("DOCTYPE") && !version.equals(inputLine))
-            {
-                JOptionPane.showMessageDialog(this, "There is a newer version available, " +
-                        "click help > check for updates to get it.");
-            }
-        }
-        catch(Exception ex){}
     }
 
     private void loadData()
@@ -233,7 +217,8 @@ public class FourRowSolitaire extends SolitaireBoard implements ActionListener
             {
                 File file = new File(fileLocation + "frs-savedgame.dat");
                 file.createNewFile();
-                DataInputStream input = new DataInputStream(new FileInputStream(file));
+                @SuppressWarnings("resource")
+				DataInputStream input = new DataInputStream(new FileInputStream(file));
 
                 while(input.available() > 0)
                 {

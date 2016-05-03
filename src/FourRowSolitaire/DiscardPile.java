@@ -32,7 +32,11 @@ import java.awt.Point;
  */
 public class DiscardPile extends CardStack
 {
-    private int drawCount = 1;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int drawCount = 1;
     private int cardsLeftFromDraw = 0;
 
     public DiscardPile(int draw)
@@ -88,7 +92,8 @@ public class DiscardPile extends CardStack
         {
             cardsLeftFromDraw = 0;
             
-            for(int i = 0; !stack.isEmpty(); i++)
+            for(@SuppressWarnings("unused")
+			int i = 0; !stack.isEmpty(); i++)
             {
                 push(stack.pop());
             }

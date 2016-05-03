@@ -32,7 +32,11 @@ import java.awt.Point;
  */
 public class AcePile extends CardStack
 {
-    private String suit;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String suit;
 
     public AcePile(String suit)
     {

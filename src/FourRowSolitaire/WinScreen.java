@@ -37,7 +37,11 @@ import javax.swing.event.MouseInputAdapter;
  */
 public class WinScreen extends JFrame
 {
-    SoundThread sound = null;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	SoundThread sound = null;
 
     public WinScreen(int animation, int sounds)
     {

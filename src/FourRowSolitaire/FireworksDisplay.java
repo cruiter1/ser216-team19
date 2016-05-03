@@ -33,7 +33,11 @@ import java.util.Random;
  */
 public class FireworksDisplay extends JPanel implements ActionListener
 {
-    public final int NUM_FIREWORKS;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public final int NUM_FIREWORKS;
     public final int FIREWORKS_SIZE;
     public static final int SET_DELAY = 10;
     public static final int FIREWORKS_TIME = 30;

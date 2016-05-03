@@ -32,7 +32,11 @@ import javax.swing.*;
  */
 public class SolitairePanel extends JPanel
 {
-    private int backgroundNumber = 2;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int backgroundNumber = 2;
     private Image background;
 
     public SolitairePanel()

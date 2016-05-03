@@ -33,7 +33,12 @@ import javax.swing.border.TitledBorder;
  */
 public class ChangeOptions extends JDialog implements ActionListener
 {
-    private int drawCount = 1;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private int drawCount = 1;
 
     private JRadioButton drawOne = new JRadioButton("Draw One");
     private JRadioButton drawThree = new JRadioButton("Draw Three");
