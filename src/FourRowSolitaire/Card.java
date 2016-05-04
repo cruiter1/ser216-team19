@@ -57,8 +57,8 @@ public class Card extends JComponent implements Cloneable
     public static final int KING = 13;
     public static final int INVALID_NUMBER = -1;
 
-    private String cardSuit;
-    private int cardNumber;
+    private final String cardSuit;
+    private final int cardNumber;
     private int fullCardNumber; // 1 - 52
     private int cardColor; //0 = black, red = 1
 

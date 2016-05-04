@@ -55,23 +55,23 @@ public class SolitaireBoard extends JFrame
     private Column[] columns = new Column[4];
 
     //The deal and discard piles
-    private DiscardPile discardPile = new DiscardPile(drawCount);
-    private DealDeck dealDeck = new DealDeck(discardPile, drawCount);
+    private final DiscardPile discardPile = new DiscardPile(drawCount);
+    private final DealDeck dealDeck = new DealDeck(discardPile, drawCount);
 
     //The four ace piles (to stack Ace - King of a single suit)
-    private AcePile[] acePiles = new AcePile[4];
+    private final AcePile[] acePiles = new AcePile[4];
 
     //The four top individual cells
-    private SingleCell[] cells = new SingleCell[4];
+    private final SingleCell[] cells = new SingleCell[4];
 
     private SolitairePanel mainPanel;
 
-    private MyMouseListener ml = new MyMouseListener();
+    private final MyMouseListener ml = new MyMouseListener();
     public MyWindowListener wl = new MyWindowListener();
 
-    private Timer timer = new Timer(1000, new TimerListener());
-    private JPanel statusBar = new JPanel(new FlowLayout(FlowLayout.CENTER));
-    private JLabel timerLabel = new JLabel("Time: OFF");
+    private final Timer timer = new Timer(1000, new TimerListener());
+    private final JPanel statusBar = new JPanel(new FlowLayout(FlowLayout.CENTER));
+    private final JLabel timerLabel = new JLabel("Time: OFF");
     private int timerCount = 0;
     private int timerToRunNextGame = 0;
     private boolean timerToRun = false;
@@ -82,10 +82,10 @@ public class SolitaireBoard extends JFrame
     private int difficulty = 2; //1 = easy, 2 = medium, 3 = hard
     private int newDifficulty = difficulty;
 
-    private LinkedList<CardStack> sourceList = new LinkedList<CardStack>();
-    private LinkedList<CardStack> destinationList = new LinkedList<CardStack>();
-    private LinkedList<Integer> numCards = new LinkedList<Integer>();
-    private LinkedList<Integer> numCardsInDiscardView = new LinkedList<Integer>();
+    private final LinkedList<CardStack> sourceList = new LinkedList<CardStack>();
+    private final LinkedList<CardStack> destinationList = new LinkedList<CardStack>();
+    private final LinkedList<Integer> numCards = new LinkedList<Integer>();
+    private final LinkedList<Integer> numCardsInDiscardView = new LinkedList<Integer>();
 
     public SolitaireBoard()
     {

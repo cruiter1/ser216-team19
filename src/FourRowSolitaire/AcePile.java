@@ -32,7 +32,7 @@ import java.awt.Point;
  */
 public class AcePile extends CardStack
 {
-    private String suit;
+    private final String suit;
 
     public AcePile(String suit)
     {

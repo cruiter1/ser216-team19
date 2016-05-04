@@ -31,7 +31,7 @@ import java.util.Random;
  */
 public class Deck
 {
-    private int deckNumber;
+    private final int deckNumber;
     private LinkedList<Card> deck = new LinkedList<Card>();
 
     public Deck(int deckNumber)

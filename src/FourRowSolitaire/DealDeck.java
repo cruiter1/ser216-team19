@@ -34,7 +34,7 @@ import javax.swing.JOptionPane;
  */
 public class DealDeck extends CardStack
 {
-    private DiscardPile discardPile;
+    private final DiscardPile discardPile;
     private int numTimesThroughDeck = 1;
 
     private int drawCount = 1;

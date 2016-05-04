@@ -32,7 +32,7 @@ import javax.swing.JLayeredPane;
  */
 public class CardStack extends JLayeredPane
 {
-    private Vector<Card> cards = new Vector<Card>();
+    private final Vector<Card> cards = new Vector<Card>();
 
     public CardStack() {}
 
