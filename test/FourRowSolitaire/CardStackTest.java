@@ -116,8 +116,10 @@ public class CardStackTest {
 	
 	@Test
 	public void validCardTest() {
-		//TODO
-		fail("test to come");
+		Card card1, card2;
+		
+		card1 = new Card("Spades", 3, 3, 3);
+		card2 = new Card("Hearts", 4, 3, 17);
 		
 	}
 
