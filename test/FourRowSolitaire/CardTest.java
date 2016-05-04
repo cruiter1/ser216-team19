@@ -2,10 +2,7 @@ package FourRowSolitaire;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import FourRowSolitaire.Card;
@@ -13,16 +10,25 @@ import FourRowSolitaire.Card;
 public class CardTest {
 
 	Card aceOClubs, threeOSpades, nineOHearts, fiveODiamonds, invalSuit,
-			invalNum;
+			invalNum, temp;
 
 	@Before
 	public void setUp() throws Exception {
-		aceOClubs = new Card("Clubs", 1, 3, 14);
+		aceOClubs = new Card("Clubs", 1, 5, 14);
 		threeOSpades = new Card("Spades", 3, 3, 3);
 		nineOHearts = new Card("Hearts", 9, 1, 48);
 		fiveODiamonds = new Card("Diamonds", 5, 3, 31);
 		invalSuit = new Card("Group", 3, 2, 42);
 		invalNum = new Card("Spades", 15, 1, 100);
+	}
+	
+	@Test
+	public void testAllNumbers() {
+		for(int i = 1; i <= 13; i++){
+			temp = new Card("Clubs", i, 3, 13+i);
+			assertFalse(temp.getNumber() == Card.INVALID_NUMBER);
+			
+		}
 	}
 
 	@Test
@@ -53,6 +59,27 @@ public class CardTest {
 		assertTrue(aceOClubs.getNumber() == 1);
 		assertTrue(invalSuit.getNumber() == -1);
 		assertTrue(invalNum.getNumber()== -1);
+	}
+	
+	@Test
+	public void testHightlighted() {
+		threeOSpades.highlight();
+		assertTrue(threeOSpades.isHighlighted());
+		boolean exception = false;
+		try{
+			invalSuit.highlight();
+		}
+		catch(Exception e){
+			exception = true;
+		}
+		assertTrue(exception);
+	}
+	
+	@Test
+	public void testFaceUp() {
+		threeOSpades.setFaceDown();
+		assertFalse(threeOSpades.isFaceUp());
+		
 	}
 
 
