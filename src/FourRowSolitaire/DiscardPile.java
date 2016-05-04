@@ -37,7 +37,7 @@ public class DiscardPile extends CardStack
 
     public DiscardPile(int draw)
     {
-        drawCount = draw;
+        setDrawCount(draw);
     }
 
     public void setDrawCount(int draw)
@@ -60,20 +60,20 @@ public class DiscardPile extends CardStack
         cardsLeftFromDraw++;
         super.addCard(card);
     }
-
+ 
     public void addStack(CardStack stack)
     {
         for(int i = stack.length(); i > 0; i--)
         {
             Card card = stack.pop();
             addCard(card);
-        }
-    }
+        } 
+    } 
 
-    public Card push(Card card)
+    public Card push(Card card) 
     {
-        if(drawCount == 1)
-        {
+        if(getDrawCount() == 1)
+        { 
             cardsLeftFromDraw = 0;
         }
         
@@ -84,13 +84,13 @@ public class DiscardPile extends CardStack
 
     public CardStack push(CardStack stack)
     {
-        if(drawCount != 1 || (drawCount == 1 && stack.length() == 1))
+        if(getDrawCount() != 1 || (getDrawCount() == 1 && stack.length() == 1))
         {
             cardsLeftFromDraw = 0;
             
             for(int i = 0; !stack.isEmpty(); i++)
             {
-                push(stack.pop());
+                push(stack.pop()); 
             }
         }
 
@@ -111,7 +111,7 @@ public class DiscardPile extends CardStack
         {
             cardsLeftFromDraw = 0;
         }
-
+ 
         return card;
     }
 
@@ -122,9 +122,9 @@ public class DiscardPile extends CardStack
     }
 
     public Card getCardAtLocation(Point p)
-    {
-        return peek();
-    }
+    { 
+        return peek();  
+    } 
 
     public boolean isValidMove(Card card)
     {
@@ -133,7 +133,7 @@ public class DiscardPile extends CardStack
            return true;
         }
 
-        return false;
+        return false; 
     }
 
     public boolean isValidMove(CardStack stack)
@@ -142,10 +142,10 @@ public class DiscardPile extends CardStack
     }
 
     public void paint(Graphics g)
-    {
+    { 
         super.paint(g);
         
-        if(!isEmpty() && drawCount == 1)
+        if(!isEmpty() && getDrawCount() == 1)
         {
             for(int i = 0; i < length(); i++)
             {
@@ -153,7 +153,7 @@ public class DiscardPile extends CardStack
                 g.drawImage(image, 0, 0, null);
             }
         }
-        else if(!isEmpty() && drawCount == 3)
+        else if(!isEmpty() && getDrawCount() == 3)
         {
             if(cardsLeftFromDraw > 0)
             {
@@ -188,4 +188,8 @@ public class DiscardPile extends CardStack
             }
         }
     }
+
+	public int getDrawCount() {
+		return drawCount;
+	}
 }

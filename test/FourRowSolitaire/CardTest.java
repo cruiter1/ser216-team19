@@ -18,7 +18,7 @@ public class CardTest {
 	@Before
 	public void setUp() throws Exception {
 		aceOClubs = new Card("Clubs", 1, 3, 14);
-		threeOSpades = new Card("Spades", 3, 3, 3);
+		threeOSpades = new Card("Spades", 3, 3, 3); 
 		nineOHearts = new Card("Hearts", 9, 1, 48);
 		fiveODiamonds = new Card("Diamonds", 5, 3, 31);
 		invalSuit = new Card("Group", 3, 2, 42);
