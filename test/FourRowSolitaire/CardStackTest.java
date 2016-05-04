@@ -115,12 +115,33 @@ public class CardStackTest {
 	}
 	
 	@Test
-	public void validCardTest() {
+	public void validMoveCardTest() {
 		Card card1, card2;
-		
 		card1 = new Card("Spades", 3, 3, 3);
 		card2 = new Card("Hearts", 4, 3, 17);
 		
+		testStack.addCard(card2);
+		
+		assertFalse(testStack.isValidMove(card1));
+		
+		assertFalse(testStack.isValidMove(new CardStack()));
+		
+	}
+
+	@Test
+	public void getBottomTest() {
+		Card card1, card2, card3, card4;
+		card1 = testDeck.getDeck().getFirst();
+		card2 = testDeck.getDeck().get(1);
+		card3 = testDeck.getDeck().get(2);
+		card4 = testDeck.getDeck().get(3);
+		
+		testStack.addCard(card1);
+		testStack.addCard(card2);
+		testStack.addCard(card3);
+		testStack.addCard(card4);
+		
+		assertTrue(testStack.getBottom().getFullNumber() == card1.getFullNumber());
 	}
 
 }
